@@ -1,7 +1,7 @@
 # gifmin
 
 >   Minify gif images seamlessly.
-
+>
 > * Ported [gifsicle](https://github.com/kohler/gifsicle) using emscripten.
 > * This project is inspired by [opencore-amr-js](https://github.com/yxl/opencore-amr-js).
 
