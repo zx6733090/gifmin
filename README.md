@@ -1,35 +1,45 @@
 #gifmin
 
-> Minify gif images seamlessly
+> Minify gif images seamlessly.Ported [gifsicle](https://github.com/kohler/gifsicle) using emscripten.
+  This project is inspired by [opencore-amr-js](https://github.com/yxl/opencore-amr-js).
 
 ## Usage
 
 ```js
-var testGifArrayBuffer=new ArrayBuffer(10)
-var module = {
-             print: console.log,
-             printErr: console.log,
-             files: [
-                      {
-                            "name": "in.gif",
-                            "buffer": new Uint8Array(testGifArrayBuffer)
-                       }
-                  ],
-                  arguments: ["-O3","--colors=32","in.gif","-o","out.gif"]
-             };
-var result=gifmin(module)
+var gifBuffer=new ArrayBuffer(10);
+var colors=32;
+var result=gifmin(gifBuffer,colors);
 //console.log(result)
-//=>{outputFiles:{"out.gif":ArrayBuffer},code:0}
+//=>ArrayBuffer or false
 ```
 
 ## API
 
-### gifmin(module)
+### gifmin(gifBuffer,colors)
 
-Returns `Promise<Object[]>` in the format `{outputFiles: Object, code: Number}`.
+#### Parameters
 
-#### module
+###### gifBuffer
 
-Type: `Array`
+Type: `ArrayBuffer`
 
-agruments to be optimized.
+Gif Buffer to be optimized.
+
+###### colors
+
+Type: `number`
+
+Reduce the number of distinct colors in each output GIF to num or less. Num must be between 2 and 256.
+
+------------------------------------------------------------------------------------------------------------
+
+#### Return value
+
+If the function succeeds, the return value is *a promise for a buffer*.
+If the function fails, the return value is *false*.
+
+
+##Remarks
+
+emscripten command: `emcc -O1 *.cpp -o gif.js`
+
