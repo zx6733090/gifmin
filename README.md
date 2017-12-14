@@ -1,4 +1,4 @@
-#gifmin
+# gifmin
 
 > Minify gif images seamlessly.Ported [gifsicle](https://github.com/kohler/gifsicle) using emscripten.
   This project is inspired by [opencore-amr-js](https://github.com/yxl/opencore-amr-js).
@@ -39,7 +39,7 @@ If the function succeeds, the return value is *a promise for a buffer*.
 If the function fails, the return value is *false*.
 
 
-##Remarks
+## Remarks
 
 emscripten command: `emcc -O1 *.cpp -o gif.js`
 
