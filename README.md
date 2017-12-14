@@ -8,6 +8,7 @@
 ```js
 var gifBuffer=new ArrayBuffer(10);
 var colors=32;
+
 var result=gifmin(gifBuffer,colors);
 //console.log(result)
 //=>ArrayBuffer or false
