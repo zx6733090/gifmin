@@ -1267,7 +1267,7 @@ function gifmin(gifBuffer,colors) {
 
 
     var TOTAL_STACK = Module['TOTAL_STACK'] || 5242880;
-    var TOTAL_MEMORY = Module['TOTAL_MEMORY'] || 16777216;
+    var TOTAL_MEMORY = Module['TOTAL_MEMORY'] || 116777216;
 
     var totalMemory = 64*1024;
     while (totalMemory < TOTAL_MEMORY || totalMemory < 2*TOTAL_STACK) {
